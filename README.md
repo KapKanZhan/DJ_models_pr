@@ -39,13 +39,13 @@ author2.update_rating()
 best_author = Author.objects.order_by('-rating').first()
 print(best_author.user.username, best_author.rating)
 
-user1 9
+Выводит:user1 9
 
 best_post = Post.objects.filter(type='A').order_by('-rating').first()
 print(best_post.created_at, best_post.author.user.username, best_post.rating, best_post.title, best_post.preview())
 
-2023-07-07 21:23:50.152096+00:00 user1 1 Статья1 Текст статьи 1......
+Выводит: 2023-07-07 21:23:50.152096+00:00 user1 1 Статья1 Текст статьи 1......
 
 Comment.objects.filter(post=best_post).values()
 
-<QuerySet [{'id': 1, 'post_id': 1, 'user_id': 7, 'text': 'Комментарий 1', 'created_at': datetime.datetime(2023, 7, 7, 21, 26, 37, 872831, tzinfo=datetime.timezone.utc), 'rating': 1}, {'id': 2, 'post_id': 1, 'user_id': 8, 'text': 'Комментарий 2', 'created_at': datetime.datetime(2023, 7, 7, 21, 26, 37, 904346, tzinfo=datetime.timezone.utc), 'rating': -1}]>
+Выводит: <QuerySet [{'id': 1, 'post_id': 1, 'user_id': 7, 'text': 'Комментарий 1', 'created_at': datetime.datetime(2023, 7, 7, 21, 26, 37, 872831, tzinfo=datetime.timezone.utc), 'rating': 1}, {'id': 2, 'post_id': 1, 'user_id': 8, 'text': 'Комментарий 2', 'created_at': datetime.datetime(2023, 7, 7, 21, 26, 37, 904346, tzinfo=datetime.timezone.utc), 'rating': -1}]>
